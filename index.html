@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tarakeswar Reddy - Portfolio</title>
+  <meta name="description" content="Portfolio of Tarakeswar Reddy, a Software Engineering Student specializing in web development">
+  <meta name="keywords" content="portfolio, web developer, software engineer, Tarakeswar Reddy">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
@@ -18,24 +23,27 @@
           I build accessible, responsive websites and applications with modern technologies.
           Passionate about creating solutions that make an impact.
         </p>
-        <a href="#contact" class="resume-btn">
-          want to hire meee 🫶
-        </a>
+        <div class="header-actions">
+          <a href="#contact" class="resume-btn">
+            Want to hire meee 🫶
+          </a>
+          <a href="contactform.html" class="resume-btn secondary">
+            Contact Me <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
       <div class="profile-img-container">
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQE72JkfUQBcEw/profile-displayphoto-shrink_400_400/B56ZavDfS_GoAg-/0/1746693650582?e=1756339200&v=beta&t=8lobz6IUur6fYxeh0m4aT6gYQXMK2FSaW4sl0ZVff1U" alt="Tarakeswar Reddy" class="profile-img">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQE72JkfUQBcEw/profile-displayphoto-shrink_400_400/B56ZavDfS_GoAg-/0/1746693650582?e=1756339200&v=beta&t=8lobz6IUur6fYxeh0m4aT6gYQXMK2FSaW4sl0ZVff1U" alt="Tarakeswar Reddy" class="profile-img" loading="lazy">
       </div>
     </div>
   </header>
 
   <nav>
-    <a><p></p></a>
-    <a href="#about"><i class="fa-solid fa-house"></i>  About</a>
-    <a href="#projects"><i class="fa-duotone fa-solid fa-file"></i>  Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact"><i class="fa-duotone fa-solid fa-address-book"></i>  Contact</a>
-    <button id="toggle-dark">🌙</button>
-    <a><p> <i class="fa-solid fa-square-down-left"></i> </p></a>
+    <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+    <a href="#projects"><i class="fa-solid fa-code"></i> Projects</a>
+    <a href="#skills"><i class="fa-solid fa-gears"></i> Skills</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+    <button id="toggle-dark" aria-label="Toggle dark mode">🌙</button>
   </nav>
 
   <section id="about" class="section-with-bg">
@@ -61,11 +69,11 @@
           </ul>
         </div>
         <div class="social-links-vertical">
-          <a href="https://github.com/Tarakreddy011"><i class="fab fa-github"></i> <span>GitHub</span></a>
-          <a href="https://linkedin.com/in/Tarakreddy011"><i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
-          <a href="https://twitter.com/yourusername"><i class="fab fa-twitter"></i> <span>Twitter</span></a>
+          <a href="https://github.com/Tarakreddy011" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> <span>GitHub</span></a>
+          <a href="https://linkedin.com/in/Tarakreddy011" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
+          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> <span>Twitter</span></a>
           <a href="mailto:singamtarak011@gmail.com"><i class="fas fa-envelope"></i> <span>Email</span></a>
-          <a href="https://www.instagram.com/singam_reddy011"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+          <a href="https://www.instagram.com/singam_reddy011" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
         </div>
       </div>
     </div>
@@ -92,9 +100,9 @@
           <div class="project-icon">
             <i class="fas fa-bread-slice"></i>
           </div>
-          <h3>Online Bakery <a href="https://the-sweetspot-bakery.vercel.app/" target="_blank"><strong>website 👈</strong></a></h3>
+          <h3>Online Bakery <a href="https://the-sweetspot-bakery.vercel.app/" target="_blank" rel="noopener noreferrer"><strong>website 👈</strong></a></h3>
           <p>E-commerce website for a bakery with product display, quantity selection, and WhatsApp order integration.</p>
-          <p>click on website to vist the website</p>
+          <p>Click on website to visit the live demo</p>
           <div class="tech-stack">
             <span>HTML</span>
             <span>CSS</span>
@@ -104,12 +112,11 @@
 
         <div class="project">
           <div class="project-icon">
-            <i class="fab fa-python" style="font-size: 48px; color: #3776AB;"></i>
+            <i class="fab fa-python"></i>
           </div>
           <h3>AI Based Travel Journal Assistant</h3>
-          <p>AI based Journal to recored your trvel exprence, with a place to store you digital data.</p>
+          <p>AI based Journal to record your travel experience, with a place to store your digital data.</p>
           <p>Here you can chat to AI bot, you can get more information on your next trip</p>
-          <p>click on website to vist the website</p>
           <div class="tech-stack">
             <span>HTML</span>
             <span>CSS</span>
@@ -118,7 +125,6 @@
             <span>Flask</span> 
             <span>OpenAI API</span>
           </div>
-
         </div>
       </div>
     </div>
@@ -143,15 +149,14 @@
             <li><i class="fab fa-python"></i> Python</li>
             <li><i class="fab fa-java"></i> Java</li>
             <li><i class="fa-solid fa-c"></i> C/C++</li>
-            <li><i class="fa-brands fa-linux"></i> linux</li>
-
+            <li><i class="fa-brands fa-linux"></i> Linux</li>
           </ul>
         </div>
         <div class="skill-category">
           <h3>Tools</h3>
           <ul>
             <li><i class="fab fa-github"></i> Git</li>
-            <li><i class="fas fa-check"></i> VS Code</li>
+            <li><i class="fas fa-code"></i> VS Code</li>
             <li><i class="fas fa-check"></i> Selenium</li>
           </ul>
         </div>
@@ -175,12 +180,12 @@
         </div>
         <div class="contact-action">
           <a href="contactform.html" class="resume-btn">
-          want to hire meee 🫶
-        </a>
+            Contact Form <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
         <div class="contact-action">
-          <a href="cv_Web.pdf" download class="resume-btn">
-            <i class="fas fa-download"></i> Download CV ⬇️
+          <a href="cv_Web.pdf" download class="resume-btn secondary">
+            <i class="fas fa-download"></i> Download CV
           </a>
         </div>
       </div>
@@ -194,11 +199,53 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="contactform.html">Contact</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/Tarakreddy011" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/Tarakreddy011" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="mailto:singamtarak011@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/singam_reddy011" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements that should appear on scroll
+    document.querySelectorAll('.project, .skill-category').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Dark mode toggle functionality
+    const toggleDark = document.getElementById('toggle-dark');
+    toggleDark.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      // Save preference to localStorage
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+      // Update button icon
+      toggleDark.textContent = isDark ? '☀️' : '🌙';
+    });
+
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+      toggleDark.textContent = '☀️';
+    }
+  </script>
 </body>
 </html>
