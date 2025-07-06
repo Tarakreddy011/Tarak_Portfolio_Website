@@ -4,273 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me - Tarakeswar Reddy</title>
+    <meta name="description" content="Contact Tarakeswar Reddy, Software Engineering Student">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --success-color: #2ecc71;
-            --error-color: #e74c3c;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .contact-header {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            padding: 2rem 5%;
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .profile-img-container {
-            flex-shrink: 0;
-        }
-        
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
-        
-        .contact-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        .header-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-right: 1.5rem;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .contact-main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 3rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-            padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            margin-right: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--dark-color);
-        }
-        
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border 0.3s ease;
-        }
-        
-        input:focus, textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-        
-        textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-        
-        .submit-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .submit-btn i {
-            margin-right: 8px;
-        }
-        
-        .submit-btn:hover {
-            background-color: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-actions {
-            text-align: center;
-        }
-        
-        .response-message {
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-            text-align: center;
-            display: none;
-        }
-        
-        .response-message.success {
-            background-color: rgba(46, 204, 113, 0.2);
-            color: var(--success-color);
-            border: 1px solid var(--success-color);
-            display: block;
-        }
-        
-        .response-message.error {
-            background-color: rgba(231, 76, 60, 0.2);
-            color: var(--error-color);
-            border: 1px solid var(--error-color);
-            display: block;
-        }
-        
-        .contact-info {
-            flex: 0 0 300px;
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            align-self: flex-start;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 1rem;
-            width: 30px;
-            text-align: center;
-        }
-        
-        .contact-footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: var(--secondary-color);
-            color: white;
-            margin-top: 2rem;
-        }
-        
-        .social-links {
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        @media (max-width: 768px) {
-            .contact-header {
-                flex-direction: column;
-                text-align: center;
-                padding: 2rem 1rem;
-            }
-            
-            .contact-main {
-                flex-direction: column;
-                padding: 2rem 1rem;
-            }
-            
-            .contact-form {
-                margin-right: 0;
-                margin-bottom: 2rem;
-            }
-            
-            nav {
-                display: flex;
-                justify-content: center;
-            }
-        }
-    </style>
 </head>
 <body>
     <header class="contact-header">
-        <div class="profile-img-container">
-            <img src="https://media.licdn.com/dms/image/v2/D5603AQE72JkfUQBcEw/profile-displayphoto-shrink_400_400/B56ZavDfS_GoAg-/0/1746693650582?e=1756339200&v=beta&t=8lobz6IUur6fYxeh0m4aT6gYQXMK2FSaW4sl0ZVff1U" alt="Tarakeswar Reddy" class="profile-img">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Get In Touch</h1>
+                <p class="header-subtitle">Have a question or want to work together? Send me a message!</p>
+            </div>
         </div>
-        <div>
-            <h1>Get In Touch</h1>
-            <h2 class="header-subtitle">Have a question or want to work together? Send me a message!</h2>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="https://github.com/Tarakreddy011" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/tarakreddy011/" target="_blank">LinkedIn</a>
-            </nav>
-        </div>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="https://github.com/Tarakreddy011" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/tarakreddy011/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </nav>
     </header>
 
     <main class="contact-main">
@@ -305,9 +59,9 @@
                     <i class="fas fa-paper-plane"></i> Send Message
                 </button>
             </div>
+            
+            <div id="response-message" class="response-message"></div>
         </form>
-        
-        <div id="response-message" class="response-message"></div>
         
         <div class="contact-info">
             <h3>Contact Information</h3>
@@ -323,62 +77,735 @@
                 <i class="fas fa-clock"></i>
                 <span>Response time: Usually within 24 hours</span>
             </div>
+            <div class="contact-item">
+                <i class="fas fa-download"></i>
+                <a href="cv_Web.pdf" download class="download-link">Download my CV</a>
+            </div>
         </div>
     </main>
     
     <footer class="contact-footer">
         <p>&copy; 2023 Tarakeswar Reddy. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://github.com/Tarakreddy011" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/tarakreddy011/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/singam_reddy011" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/Tarakreddy011" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tarakreddy011/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/singam_reddy011" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="mailto:singamtarak011@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
+    <style>
+        /* Base and Utility Styles (usually from a shared styles.css) */
+:root {
+    --primary-color: #4361ee;
+    --primary-light: #a5b4fc;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --accent-light: #90e0ef;
+    --light-color: #f8f9fa;
+    --dark-color: #121212;
+    --text-color: #333;
+    --text-light: #f8f9fa;
+    --bg-light: #ffffff;
+    --bg-dark: #121212;
+    --card-bg: #ffffff;
+    --card-dark: #1e1e1e;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --border-radius: 12px;
+}
 
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = e.target;
-            const responseMessage = document.getElementById('response-message');
-            
-            // Simulate form submission (in a real scenario, you would use AJAX or fetch)
-            setTimeout(() => {
-                responseMessage.textContent = 'Thank you for your message! I will get back to you soon.';
-                responseMessage.className = 'response-message success';
-                form.reset();
-                
-                // Hide the message after 5 seconds
-                setTimeout(() => {
-                    responseMessage.style.display = 'none';
-                }, 5000);
-            }, 1000);
-            
-            // In a real implementation, you would:
-            // 1. Collect form data
-            // 2. Send it to your server/email service
-            // 3. Show appropriate success/error message
-            // Example:
-            /*
-            const formData = new FormData(form);
-            
-            fetch('your-endpoint', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                responseMessage.textContent = data.message;
-                responseMessage.className = 'response-message success';
-                form.reset();
-            })
-            .catch(error => {
-                responseMessage.textContent = 'There was an error sending your message. Please try again later.';
-                responseMessage.className = 'response-message error';
-            });
-            */
-        });
-    </script>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    transition: var(--transition);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: var(--primary-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Header Styles for Contact Page --- */
+.contact-header {
+    background-color: var(--light-color);
+    padding: 5rem 1rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center; /* Center content by default */
+}
+
+.contact-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), transparent);
+    z-index: 0;
+}
+
+.contact-header .header-content {
+    display: flex;
+    justify-content: center; /* Center items initially */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.contact-header .profile-img-container {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem; /* Space below image on smaller screens */
+}
+
+.contact-header .profile-img {
+    width: 200px; /* Smaller image for contact page header */
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.contact-header .profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-hover);
+}
+
+.contact-header .header-text {
+    flex-grow: 1; /* Allow text to grow */
+    max-width: 600px; /* Limit text width */
+    text-align: center;
+}
+
+.contact-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contact-header .header-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.contact-header nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50px;
+    margin: 2rem auto -4rem auto; /* Adjust margin to pull nav up */
+    max-width: max-content;
+    position: relative; /* Changed from sticky for simpler contact page */
+    z-index: 100;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInDown 0.8s ease;
+}
+
+.contact-header nav a, .contact-header nav button {
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color); /* Ensure link color is visible */
+}
+
+.contact-header nav a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.contact-header nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+.contact-header nav button:hover {
+    transform: scale(1.1);
+}
+
+/* --- Main Contact Section Styles --- */
+.contact-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 6rem; /* Adjusted margin to account for nav bar */
+    padding: 0 1.5rem;
+}
+
+.contact-form {
+    flex: 1.2;
+    max-width: 400px;
+    width: 100%;
+    background: linear-gradient(135deg, #f8f9fa 60%, #e9f0fb 100%);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(67, 97, 238, 0.13), 0 1px 6px rgba(67, 97, 238, 0.09);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.contact-form:hover {
+    box-shadow: 0 12px 32px rgba(67, 97, 238, 0.18), 0 2px 10px rgba(67, 97, 238, 0.12);
+    transform: translateY(-3px) scale(1.01);
+}
+
+.contact-form h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: #f4f7fb;
+    color: var(--text-color);
+    transition: var(--transition);
+    font-size: 0.98rem;
+    resize: vertical; /* Allows only vertical resizing for textarea */
+    box-shadow: inset 0 1px 4px rgba(67, 97, 238, 0.04);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    background-color: #e9f0fb;
+    box-shadow: inset 0 1px 6px rgba(67, 97, 238, 0.08), 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem; /* Adjusted margin */
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.contact-form .submit-btn:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 4px 16px rgba(67, 97, 238, 0.13);
+}
+
+.response-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    opacity: 0; /* Hidden by default, JavaScript will show */
+    transition: opacity 0.3s ease;
+}
+
+.response-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    opacity: 1;
+}
+
+.response-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    opacity: 1;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background: linear-gradient(135deg, #f8f9fa 60%, #e9f0fb 100%);
+    align-items: flex-end; /* Align items to the right */
+    text-align: right; /* Text aligned to the right */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(67, 97, 238, 0.10), 0 1px 6px rgba(67, 97, 238, 0.06);
+    padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+    border-right: 3px solid var(--primary-color);
+    min-width: 200px;
+    transition: var(--transition);
+}
+
+.contact-info:hover {
+    box-shadow: 0 8px 24px rgba(67, 97, 238, 0.15), 0 2px 8px rgba(67, 97, 238, 0.09);
+    transform: translateY(-3px) scale(1.01);
+}
+
+.contact-info h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    text-align: right;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1rem 1.2rem;
+    background: linear-gradient(90deg, #f4f7fb 80%, #e9f0fb 100%);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.08);
+    transition: var(--transition);
+    justify-content: flex-end; /* Push content to the right */
+    text-align: right;
+    border-right: 2px solid var(--primary-color);
+    min-height: 48px;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 4px 14px rgba(67, 97, 238, 0.13);
+    background: linear-gradient(90deg, #e9f0fb 60%, #f4f7fb 100%);
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    min-width: 24px;
+    order: 2; /* Place icon after text for right-alignment */
+}
+
+.contact-item span,
+.contact-item .download-link {
+    font-size: 0.98rem;
+    color: var(--text-color);
+    opacity: 0.92;
+    font-weight: 500;
+    order: 1; /* Place text/link before icon */
+    text-decoration: none; /* Ensure link doesn't have default underline */
+}
+
+.contact-item .download-link {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.contact-item .download-link:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+
+/* --- Footer Styles for Contact Page --- */
+.contact-footer {
+    background-color: var(--light-color);
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 3rem; /* Space above footer */
+}
+
+.contact-footer p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.contact-footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.contact-footer .social-links a {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.contact-footer .social-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* --- Dark Mode Styles --- */
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: #e0e0e0;
+}
+
+body.dark-mode .contact-header,
+body.dark-mode .contact-footer {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .contact-header nav {
+    background-color: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .contact-header nav a,
+body.dark-mode .contact-header nav button {
+    color: var(--text-light);
+}
+
+body.dark-mode .contact-header nav a:hover {
+    background-color: var(--primary-light); /* Lighter primary for contrast */
+    color: var(--dark-color);
+}
+
+body.dark-mode .contact-form,
+body.dark-mode .contact-info {
+    background: linear-gradient(135deg, var(--card-dark) 60%, #2a2a2a 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .contact-form:hover,
+body.dark-mode .contact-info:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .contact-form h3,
+body.dark-mode .contact-info h3 {
+    color: var(--primary-light);
+}
+
+body.dark-mode .contact-form label {
+    color: var(--text-light);
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #222;
+    border-color: var(--primary-light);
+    color: var(--text-light);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .contact-form input:focus,
+body.dark-mode .contact-form textarea:focus {
+    background-color: #2a2a2a;
+    border-color: var(--accent-light);
+    box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(165, 180, 252, 0.3);
+}
+
+body.dark-mode .contact-item {
+    background: linear-gradient(90deg, #222 80%, #2a2a2a 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .contact-item:hover {
+    background: linear-gradient(90deg, #2a2a2a 60%, #222 100%);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .contact-item i {
+    color: var(--primary-light);
+}
+
+body.dark-mode .contact-item span,
+body.dark-mode .contact-item .download-link {
+    color: var(--text-light);
+    opacity: 0.92;
+}
+
+body.dark-mode .contact-item .download-link {
+    color: var(--primary-light);
+}
+
+body.dark-mode .contact-item .download-link:hover {
+    color: var(--accent-light);
+}
+
+body.dark-mode .contact-footer p {
+    color: #ccc;
+}
+
+body.dark-mode .response-message.success {
+    background-color: #1a3a1f;
+    color: #8ce19e;
+    border-color: #387042;
+}
+
+body.dark-mode .response-message.error {
+    background-color: #4a1d20;
+    color: #e6a8ac;
+    border-color: #8c3b40;
+}
+
+
+/* --- Responsive Design for Contact Page --- */
+@media (max-width: 900px) {
+    .contact-main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem; /* Reduce gap for smaller screens */
+        margin-top: 4rem; /* Adjust margin for stacking */
+    }
+    .contact-form,
+    .contact-info {
+        max-width: 100%;
+        width: 100%;
+        align-items: flex-start !important; /* Override right-align for mobile */
+        text-align: left !important; /* Override right-align for mobile */
+        border-radius: 10px;
+        border-left: 4px solid var(--primary-color); /* Add left border back for consistency */
+        border-right: none; /* Remove right border */
+        padding: 1.5rem 1rem; /* Adjust padding */
+        min-width: unset;
+    }
+    .contact-info .contact-item {
+        justify-content: flex-start; /* Align items left */
+        border-left: 2px solid var(--primary-color); /* Add left border for consistency */
+        border-right: none; /* Remove right border */
+    }
+    .contact-item i {
+        order: 1; /* Icon before text */
+    }
+    .contact-item span,
+    .contact-item .download-link {
+        order: 2; /* Text after icon */
+    }
+
+    .contact-header .header-content {
+        flex-direction: column-reverse; /* Image below text on small screens */
+        text-align: center;
+    }
+    .contact-header .profile-img-container {
+        margin-bottom: 1.5rem;
+    }
+    .contact-header nav {
+        margin-top: 1rem; /* Adjust margin for nav below header content */
+        margin-bottom: 2rem; /* Space below nav */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-header {
+        padding: 4rem 1rem 2rem 1rem; /* Adjust header padding */
+    }
+    .contact-header h1 {
+        font-size: 2.2rem;
+    }
+    .contact-header .header-subtitle {
+        font-size: 1.2rem;
+    }
+    .contact-header .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    .contact-header nav {
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+    .contact-header nav a, .contact-header nav button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-main {
+        margin-top: 3rem; /* Further adjust top margin */
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    .contact-form {
+        padding: 1.2rem 0.8rem;
+    }
+    .contact-info {
+        padding: 1.2rem 0.8rem;
+    }
+    .contact-item {
+        flex-direction: row; /* Keep row direction for items on very small screens if space allows */
+        align-items: center;
+        text-align: left;
+        justify-content: flex-start;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-header h1 {
+        font-size: 1.8rem;
+    }
+    .contact-header .header-subtitle {
+        font-size: 1rem;
+    }
+    .contact-header .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    .contact-header nav {
+        flex-direction: column; /* Stack nav items */
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+    .contact-header nav a, .contact-header nav button {
+        width: 100%; /* Full width for stacked nav items */
+        justify-content: center;
+        text-align: center;
+    }
+    .contact-form {
+        padding: 1rem 0.7rem;
+    }
+    .contact-info {
+        padding: 1rem 0.7rem;
+    }
+    .contact-item {
+        flex-wrap: wrap; /* Allow wrapping within contact items if content is long */
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .contact-item i {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+    }
+}
+
+/* Animations (if you want them) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    </style>
+
+    <script src="script.js"></script>
 </body>
 </html>
